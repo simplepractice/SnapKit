@@ -29,7 +29,7 @@
 
 public extension LayoutConstraint {
     
-    override public var description: String {
+    override var description: String {
         var description = "<"
         
         description += descriptionForObject(self)
@@ -82,6 +82,7 @@ private func descriptionForRelation(_ relation: LayoutRelation) -> String {
     case .equal:                return "=="
     case .greaterThanOrEqual:   return ">="
     case .lessThanOrEqual:      return "<="
+    @unknown default:           fatalError()
     }
 }
 
@@ -109,6 +110,7 @@ private func descriptionForAttribute(_ attribute: LayoutAttribute) -> String {
         case .trailingMargin:       return "trailingMargin"
         case .centerXWithinMargins: return "centerXWithinMargins"
         case .centerYWithinMargins: return "centerYWithinMargins"
+        @unknown default:           fatalError()
         }
     #else
         switch attribute {

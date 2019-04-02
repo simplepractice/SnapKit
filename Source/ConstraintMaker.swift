@@ -69,11 +69,6 @@ public class ConstraintMaker {
         return self.makeExtendableWithAttributes(.centerY)
     }
     
-    @available(*, deprecated:3.0, message:"Use lastBaseline instead")
-    public var baseline: ConstraintMakerExtendable {
-        return self.makeExtendableWithAttributes(.lastBaseline)
-    }
-    
     public var lastBaseline: ConstraintMakerExtendable {
         return self.makeExtendableWithAttributes(.lastBaseline)
     }

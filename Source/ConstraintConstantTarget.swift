@@ -82,6 +82,8 @@ extension ConstraintConstantTarget {
                     return value.y
                 case .width, .height, .notAnAttribute:
                     return 0.0
+                @unknown default:
+                    fatalError()
                 }
             #else
                 switch layoutAttribute {
@@ -116,6 +118,8 @@ extension ConstraintConstantTarget {
                     return -(value.top + value.bottom)
                 case .notAnAttribute:
                     return 0.0
+                @unknown default:
+                    fatalError()
                 }
             #else
                 switch layoutAttribute {
